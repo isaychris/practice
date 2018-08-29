@@ -1,5 +1,5 @@
-public class LinkedList {
-    public Node head;
+public class LinkedList<T> {
+    public Node<T> head;
 
     public LinkedList() {
         this.head = null;
@@ -11,8 +11,8 @@ public class LinkedList {
         return false;
     }
 
-    public void addFront(Object data) {
-        Node new_node = new Node(data);
+    public void addFront(T data) {
+        Node<T> new_node = new Node<T>(data);
 
         if (head == null) {
             head = new_node;
@@ -24,8 +24,8 @@ public class LinkedList {
         head = new_node;
     }
 
-    public void addBack(Object data) {
-        Node new_node = new Node(data);
+    public void addBack(T data) {
+        Node<T> new_node = new Node<T>(data);
 
         if (head == null) {
             head = new_node;
@@ -54,8 +54,8 @@ public class LinkedList {
             return;
         }
 
-        Node p = head;
-        Node prev = head;
+        Node<T> p = head;
+        Node<T> prev = head;
 
         while (p.next != null) {
             prev = p;
@@ -66,8 +66,8 @@ public class LinkedList {
     }
 
     public void reverse() {
-        Node prev = null;
-        Node next = null;
+        Node<T> prev = null;
+        Node<T> next = null;
         Node current = head;
 
         while(current != null) {
@@ -80,14 +80,14 @@ public class LinkedList {
     }
 
     public void traverse(){
-        Node p = head;
+        Node<T> p = head;
         while (p != null) {
             System.out.println(p.data);
             p = p.next;
         }
     }
     public static void main(String[] args) {
-        LinkedList LL = new LinkedList();
+        LinkedList<String> LL = new LinkedList();
         LL.addBack("Hey");
         LL.addBack("Hello");
         LL.addBack("World");

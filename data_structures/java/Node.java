@@ -1,12 +1,12 @@
-public class Node  {
-    public Object data;
-    public Node next;
+public class Node<T>  {
+    public T data;
+    public Node<T> next;
 
     public Node() {
         this.data = null;
         this.next = null;
     }
-    public Node(Object data) {
+    public Node(T data) {
         this.data = data;
         this.next = null;
     }
